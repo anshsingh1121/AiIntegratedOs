@@ -1,14 +1,22 @@
 <p align="center">
+  <img src="assets/banner.png" alt="J.A.R.V.I.S Banner" width="100%">
+</p>
+
+<p align="center">
   <img src="https://img.shields.io/badge/Python-3.9%2B-blue?style=for-the-badge&logo=python&logoColor=white" alt="Python">
   <img src="https://img.shields.io/badge/Gemini-AI_Powered-4285F4?style=for-the-badge&logo=google&logoColor=white" alt="Gemini AI">
   <img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" alt="License">
   <img src="https://img.shields.io/badge/Status-Active-success?style=for-the-badge" alt="Status">
 </p>
 
-<h1 align="center">🤖 J.A.R.V.I.S AI Assistant</h1>
+<h1 align="center">
+  <img src="assets/logo.png" alt="Logo" width="80" height="80">
+  <br>
+  J.A.R.V.I.S AI Assistant
+</h1>
 
 <p align="center">
-  <em>Your Intelligent Personal Assistant Powered by Google Gemini AI</em>
+  <em>🚀 Your Intelligent Personal Assistant Powered by Google Gemini AI</em>
 </p>
 
 <p align="center">
@@ -23,7 +31,11 @@
 
 ---
 
-## ✨ Features
+## ✨ Key Features
+
+<p align="center">
+  <img src="assets/features.png" alt="Features Overview" width="700">
+</p>
 
 <table>
 <tr>
@@ -66,6 +78,36 @@
 
 ---
 
+## 🏗️ System Architecture
+
+<p align="center">
+  <img src="assets/architecture.png" alt="System Architecture" width="800">
+</p>
+
+The architecture follows a modular design pattern:
+- **User Input Layer**: Accepts voice commands via microphone or text input via keyboard
+- **Processing Layer**: Speech recognition and command classification
+- **Execution Layer**: Routes commands to appropriate handlers (AI, Browser, File System)
+
+---
+
+## 🔄 Data Flow Pipeline
+
+<p align="center">
+  <img src="assets/pipeline.png" alt="Data Flow Pipeline" width="900">
+</p>
+
+| Stage | Description |
+|-------|-------------|
+| **1. Input** | Voice or text command received |
+| **2. Recognition** | Speech converted to text using Google Speech API |
+| **3. NLP** | Natural language understanding via Gemini AI |
+| **4. Classification** | Command type identified and routed |
+| **5. Execution** | Action performed (web, file, or chat) |
+| **6. Response** | Result displayed to user |
+
+---
+
 ## 🚀 Quick Start
 
 ### Prerequisites
@@ -76,28 +118,21 @@
 
 ### Installation
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/yourusername/AiIntegratedOs.git
-   cd AiIntegratedOs
-   ```
+```bash
+# 1. Clone the repository
+git clone https://github.com/yourusername/AiIntegratedOs.git
+cd AiIntegratedOs
 
-2. **Install dependencies**
-   ```bash
-   pip install -r requirements.txt
-   ```
+# 2. Install dependencies
+pip install -r requirements.txt
 
-3. **Configure environment variables**
-   
-   Create a `.env` file in the project root:
-   ```env
-   gemini_api_key=YOUR_GEMINI_API_KEY_HERE
-   ```
+# 3. Configure environment variables
+# Create a .env file with:
+echo "gemini_api_key=YOUR_GEMINI_API_KEY_HERE" > .env
 
-4. **Run the assistant**
-   ```bash
-   python main.py
-   ```
+# 4. Run the assistant
+python main.py
+```
 
 ---
 
@@ -148,11 +183,18 @@ AiIntegratedOs/
 ├── 📄 main.py              # Core application logic
 ├── 📄 requirements.txt     # Python dependencies
 ├── 📄 .env                 # API keys (create this file)
-├── 📄 .gitignore          # Git ignore rules
-├── 📄 README.md           # This file
+├── 📄 .gitignore           # Git ignore rules
+├── 📄 README.md            # Documentation
 │
-└── 📂 Gemini/             # AI-generated responses (auto-created)
-    └── 📄 *.txt           # Saved AI responses
+├── 📂 assets/              # Project images & diagrams
+│   ├── 🖼️ banner.png       # Project banner
+│   ├── 🖼️ logo.png         # Project logo
+│   ├── 🖼️ architecture.png # System architecture diagram
+│   ├── 🖼️ pipeline.png     # Data flow pipeline
+│   └── 🖼️ features.png     # Features showcase
+│
+└── 📂 Gemini/              # AI-generated responses (auto-created)
+    └── 📄 *.txt            # Saved AI responses
 ```
 
 ---
@@ -160,9 +202,7 @@ AiIntegratedOs/
 ## 🛠️ Tech Stack
 
 <p align="center">
-  <img src="https://skillicons.dev/icons?i=python" alt="Python" height="50">
-  &nbsp;&nbsp;
-  <img src="https://www.gstatic.com/lamda/images/gemini_sparkle_v002_d4735304ff6292a690345.svg" alt="Gemini" height="50">
+  <img src="https://skillicons.dev/icons?i=python,vscode,git,github" alt="Tech Stack" height="50">
 </p>
 
 | Technology | Purpose |
@@ -183,6 +223,8 @@ AiIntegratedOs/
 - [ ] 📅 Calendar & reminder integration
 - [ ] 🎨 Custom voice themes
 - [ ] 🔐 Multi-user authentication
+- [ ] 🌍 Multi-language support
+- [ ] 🔌 Plugin system for extensions
 
 ---
 
@@ -207,6 +249,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 👤 Author
 
 <p align="center">
+  <img src="assets/logo.png" alt="Author" width="100" style="border-radius: 50%;">
+  <br>
   <strong>Ansh Singh</strong>
   <br>
   <em>AI Enthusiast & Developer</em>
@@ -216,14 +260,22 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
   <a href="https://github.com/yourusername">
     <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" alt="GitHub">
   </a>
+  <a href="https://linkedin.com/in/yourusername">
+    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn">
+  </a>
 </p>
 
 ---
 
+## ⭐ Show Your Support
+
+If you find this project helpful, please consider giving it a ⭐ on GitHub!
+
 <p align="center">
   <img src="https://img.shields.io/badge/Made%20with-❤️-red?style=for-the-badge" alt="Made with love">
+  <img src="https://img.shields.io/badge/Powered%20by-Gemini%20AI-blue?style=for-the-badge" alt="Powered by Gemini">
 </p>
 
 <p align="center">
-  <em>⭐ Star this repo if you find it helpful! ⭐</em>
+  <em>© 2026 J.A.R.V.I.S AI Assistant. All Rights Reserved.</em>
 </p>
