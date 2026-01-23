@@ -33,15 +33,19 @@ if not gemini_api_key:
     print(f"Looking for .env at: {env_path}")
     print("Please create a .env file with: gemini_api_key=YOUR_KEY_HERE")
     model = None
+    chat_session = None
 else:
     genai.configure(api_key=gemini_api_key)
     try:
         model = genai.GenerativeModel("gemini-2.0-flash")
+        # Initialize ChatSession for true multi-turn conversation support
+        chat_session = model.start_chat(history=[])
     except Exception as e:
         print("Error loading Gemini model:", e)
         model = None
+        chat_session = None
 
-# Chat history for context
+# Chat history for display/logging purposes
 chat_history = ""
 
 # ============================================
@@ -49,13 +53,14 @@ chat_history = ""
 # ============================================
 
 def chat(query: str) -> str:
-    """Handles AI-powered conversation with context."""
+    """Handles AI-powered conversation with context using ChatSession."""
     global chat_history
     chat_history += f"User: {query}\nJarvis: "
 
-    if USE_CHATBOT and model:
+    if USE_CHATBOT and chat_session:
         try:
-            response = model.generate_content(query)
+            # Use ChatSession for true multi-turn conversation with context
+            response = chat_session.send_message(query)
             reply = response.text.strip() if hasattr(response, "text") else "Error: No valid AI response."
         except Exception as e:
             reply = f"AI error: {str(e)}"
@@ -122,7 +127,7 @@ def process_command(query: str) -> bool:
     Processes user commands and returns True if the program should continue,
     False if it should exit.
     """
-    global chat_history
+    global chat_history, chat_session
 
     # Predefined websites
     sites = {
@@ -170,10 +175,11 @@ def process_command(query: str) -> bool:
         print("Goodbye!")
         return False
 
-    # Reset chat history
+    # Reset chat history and session
     if "reset chat" in query:
         chat_history = ""
-        print("Chat history reset.")
+        chat_session = model.start_chat(history=[]) if model else None
+        print("Chat history and session reset.")
         return True
 
     # Default: use chatbot
